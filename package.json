@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helper to more easily download data in JavaScript/TypeScript in a front-end application",
   "name": "@builtwithjavascript/use-download-utils",
   "author": "Damiano Fusco",
@@ -49,7 +49,7 @@
     },
     "./package.json": "./package.json"
   },
-  "dependencies": {
+  "devDependencies": {
     "@types/jest": "^29.5.11",
     "@types/node": "^20.11.5",
     "husky": "^8.0.3",
