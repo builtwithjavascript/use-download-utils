@@ -49,7 +49,8 @@ describe('useDownloadUtils', () => {
       click: vi.fn(),
       setAttribute: vi.fn(),
       style: { visibility: 'hidden' },
-      download: '' // Add this to satisfy the if condition in downloadBlob
+      download: '', // Add this to satisfy the if condition in downloadBlob
+      remove: vi.fn()
     }
 
     // Mock document.createElement to always return this mock anchor element
@@ -71,6 +72,18 @@ describe('useDownloadUtils', () => {
     const fileName = 'test.json'
     const mimeType = 'application/json;charset=utf-8;'
     const dataStr = '{"test": "data"}'
+
+    // Create a mock anchor element and reuse it
+    const mockAnchorElement = {
+      click: vi.fn(),
+      setAttribute: vi.fn(),
+      style: { visibility: 'hidden' },
+      download: '', // Add this to satisfy the if condition in downloadBlob
+      remove: vi.fn()
+    }
+
+    // Mock document.createElement to always return this mock anchor element
+    document.createElement = vi.fn(() => mockAnchorElement) as any
 
     // Spy on downloadBlob method of the utils instance
     const downloadBlobSpy = vi.spyOn(utils, 'downloadBlob')

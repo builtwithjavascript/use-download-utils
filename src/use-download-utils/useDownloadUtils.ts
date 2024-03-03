@@ -31,7 +31,7 @@ export const useDownloadUtils = () => {
           link.setAttribute('download', fileName)
           link.click()
         }
-        document.removeChild(link)
+        link.remove()
         return true
       },
       download: async (fileName: string, mimeType: string, dataStr: string) => {
