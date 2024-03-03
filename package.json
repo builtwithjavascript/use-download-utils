@@ -1,0 +1,64 @@
+{
+  "name": "@builtwithjavascript/use-download-utils",
+  "version": "1.0.0",
+  "description": "Helper to more easily download data in JavaScript/TypeScript in a front-end application",
+  "author": "Damiano Fusco",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/builtwithjavascript/use-download-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/builtwithjavascript/use-download-utils/issues"
+  },
+  "homepage": "https://github.com/builtwithjavascript/use-download-utils#readme",
+  "keywords": [
+    "javascript, download, blob, html5, scripts, large scale apps, vue, react, svelte, nuxt, next, node"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build-types": "tsc src/main.ts --esModuleInterop --declaration --emitDeclarationOnly --outDir dist",
+    "build": "tsc --esModuleInterop && vite build && npm run build-types",
+    "pub": "npm publish --access public",
+    "test": "TESTING=true vitest run",
+    "test-watch": "TESTING=true vitest watch",
+    "pretty": "prettier -w \"./src/**/*.ts\"",
+    "version-patch": "npm run pretty; npm version patch -m \"Patch version\"",
+    "preversion": "npm run test",
+    "version": "npm run build",
+    "postversion": "git push"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged \"./src/**/*.ts\""
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "types": "dist/use-download-utils/index.d.ts",
+  "main": "dist/use-download-utils.umd.js",
+  "module": "dist/use-download-utils.es.js",
+  "exports": {
+    ".": {
+      "import": [
+        "./dist/use-download-utils.es.js"
+      ],
+      "require": "./dist/use-download-utils.umd.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.24",
+    "husky": "^9.0.11",
+    "jsdom": "^24.0.0",
+    "prettier": "^3.2.5",
+    "pretty-quick": "^4.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4",
+    "vitest": "^1.3.1"
+  }
+}
