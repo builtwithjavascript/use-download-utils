@@ -1,7 +1,7 @@
 {
-  "name": "@builtwithjavascript/use-download-utils",
   "version": "1.0.0",
   "description": "Helper to more easily download data in JavaScript/TypeScript in a front-end application",
+  "name": "@builtwithjavascript/use-download-utils",
   "author": "Damiano Fusco",
   "license": "MIT",
   "type": "module",
