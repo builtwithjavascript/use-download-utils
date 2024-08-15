@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Helper to more easily download data in JavaScript/TypeScript in a front-end application",
   "name": "@builtwithjavascript/use-download-utils",
   "author": "Damiano Fusco",
@@ -37,28 +37,30 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts",
-  "main": "dist/use-download-utils.umd.js",
-  "module": "dist/use-download-utils.es.js",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.3.0",
+    "jsdom": "^24.1.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.1",
+    "vitest": "^2.0.5"
+  },
   "exports": {
     ".": {
-      "import": [
-        "./dist/use-download-utils.es.js"
-      ],
-      "require": "./dist/use-download-utils.umd.js"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/vue-primitives.es.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/vue-primitives.umd.js"
+      },
+      "types": "./dist/index.d.ts"
     },
     "./package.json": "./package.json"
   },
-  "devDependencies": {
-    "@types/jest": "^29.5.11",
-    "@types/node": "^20.11.5",
-    "husky": "^8.0.3",
-    "jsdom": "^24.0.0",
-    "prettier": "^3.2.4",
-    "pretty-quick": "^4.0.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.12",
-    "vitest": "^1.2.1"
-  }
+  "types": "./dist/index.d.ts",
+  "main": "./dist/use-download-utils.umd.js",
+  "module": "./dist/use-download-utils.es.js"
 }
